@@ -118,8 +118,9 @@ function renderWorks() {
   });
 }
 
-/* ============ 视频悬停播放 ============ */
+/* ============ 视频悬停播放（仅支持 hover 的设备） ============ */
 function handleVideoHover() {
+  if (!window.matchMedia("(hover: hover)").matches) return;
   document.addEventListener("mouseover", (e) => {
     const card = e.target.closest(".card");
     if (!card) return;
@@ -167,6 +168,7 @@ function renderLightbox() {
     v.src = encodeSrc(item.src);
     v.controls = true;
     v.autoplay = true;
+    v.muted = true;
     v.loop = true;
     v.playsInline = true;
     lbStage.appendChild(v);
@@ -220,10 +222,53 @@ function bindReveal() {
   els.forEach((el) => io.observe(el));
 }
 
+/* ============ 灯箱滑动切换（移动端） ============ */
+function bindLightboxSwipe() {
+  let startX = 0;
+  let startY = 0;
+  let isVideo = false;
+  lightbox.addEventListener("touchstart", (e) => {
+    startX = e.changedTouches[0].clientX;
+    startY = e.changedTouches[0].clientY;
+    isVideo = !!e.target.closest("video");
+  }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    if (isVideo) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      stepLightbox(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+}
+
+/* ============ 移动端菜单 ============ */
+function bindNav() {
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+  if (!toggle || !links) return;
+
+  toggle.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    toggle.classList.toggle("active", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  links.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
 /* ============ 初始化 ============ */
 document.addEventListener("DOMContentLoaded", () => {
   renderWorks();
   bindLightbox();
+  bindLightboxSwipe();
   handleVideoHover();
   bindReveal();
+  bindNav();
 });

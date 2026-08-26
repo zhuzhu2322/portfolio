@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品集 · 三维创作</title>
+  <meta name="description" content="三维建模 · 动画 · 动态设计 · 数字雕刻作品集" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#top">作品集<span class="dot">.</span></a>
+    <nav class="nav-links">
+      <a href="#about">关于</a>
+      <a href="#c4d">C4D</a>
+      <a href="#zbrush">ZBrush</a>
+      <a href="#3dsmax">3ds Max</a>
+      <a href="#maya">Maya</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <!-- Hero 开场 -->
+  <section class="hero" id="top">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <p class="hero-eyebrow reveal">三维创作作品集</p>
+    <h1 class="hero-title reveal">作品集</h1>
+    <p class="hero-sub reveal">三维建模 · 动画 · 动态设计 · 数字雕刻</p>
+    <p class="hero-en reveal">3D MODELING · ANIMATION · MOTION · SCULPTING</p>
+    <div class="hero-contact reveal">
+      <a href="mailto:2322037526@qq.com">2322037526@qq.com</a>
+      <span class="sep">·</span>
+      <a href="tel:18057858097">180 5785 8097</a>
+    </div>
+    <a class="scroll-hint reveal" href="#about" aria-label="向下滚动">
+      <span>向下滚动</span>
+      <i></i>
+    </a>
+  </section>
+
+  <main>
+    <!-- 关于 -->
+    <section class="about" id="about">
+      <div class="about-inner reveal">
+        <p class="about-lead">
+          你好，我是朱宏宇，一名专注于三维创作的艺术家。
+        </p>
+        <p class="about-text">
+          作品涵盖三维建模、动画、动态设计与数字雕刻，熟练使用 3ds Max、C4D、Maya 与 ZBrush。
+          热爱把想象变成可见的画面，追求光影、材质与形体之间的平衡。
+        </p>
+        <div class="about-tags">
+          <span>3ds Max</span><span>C4D</span><span>Maya</span><span>ZBrush</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 作品分类（网格由 main.js 动态生成） -->
+    <section class="work-section" id="c4d">
+      <div class="section-head reveal">
+        <span class="section-no">01</span>
+        <div>
+          <h2>C4D</h2>
+          <p class="section-sub">动态设计 · Motion Design</p>
+        </div>
+      </div>
+      <div class="grid" data-category="c4d"></div>
+    </section>
+
+    <section class="work-section" id="zbrush">
+      <div class="section-head reveal">
+        <span class="section-no">02</span>
+        <div>
+          <h2>ZBrush</h2>
+          <p class="section-sub">数字雕刻 · Sculpting</p>
+        </div>
+      </div>
+      <div class="grid" data-category="zbrush"></div>
+    </section>
+
+    <section class="work-section" id="3dsmax">
+      <div class="section-head reveal">
+        <span class="section-no">03</span>
+        <div>
+          <h2>3ds Max</h2>
+          <p class="section-sub">三维建模与渲染 · Modeling &amp; Rendering</p>
+        </div>
+      </div>
+      <div class="grid" data-category="3dsmax"></div>
+    </section>
+
+    <section class="work-section" id="maya">
+      <div class="section-head reveal">
+        <span class="section-no">04</span>
+        <div>
+          <h2>Maya</h2>
+          <p class="section-sub">三维动画 · Animation</p>
+        </div>
+      </div>
+      <div class="grid" data-category="maya"></div>
+    </section>
+
+    <!-- 联系 -->
+    <section class="contact" id="contact">
+      <div class="contact-inner reveal">
+        <p class="contact-eyebrow">CONTACT</p>
+        <h2>期待与你合作</h2>
+        <p class="contact-text">如有项目合作或招聘需求，欢迎通过以下方式联系我。</p>
+        <ul class="contact-list">
+          <li><span>邮箱</span><a href="mailto:2322037526@qq.com">2322037526@qq.com</a></li>
+          <li><span>电话</span><a href="tel:18057858097">180 5785 8097</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 作品集 · 朱宏宇</p>
+    <a href="#top" class="to-top">回到顶部 ↑</a>
+  </footer>
+
+  <!-- 灯箱 -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lb-close" aria-label="关闭">✕</button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="上一张">‹</button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="下一张">›</button>
+    <figure class="lb-stage" id="lb-stage"></figure>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

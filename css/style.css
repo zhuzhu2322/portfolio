@@ -9,8 +9,8 @@
   --accent: #e0b36b;
   --accent-soft: rgba(224, 179, 107, 0.14);
   --radius: 14px;
-  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
-  --font-display: "Space Grotesk", "Noto Sans SC", sans-serif;
+  --font-sans: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  --font-display: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
   --nav-h: 64px;
 }
 

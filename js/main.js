@@ -43,7 +43,7 @@ const WORKS = [
       { type: "image", src: "3ds max/朱宏宇3.jpg", title: "作品 03" },
       { type: "image", src: "3ds max/朱宏宇4.jpg", title: "作品 04" },
       { type: "image", src: "3ds max/朱宏宇5.jpg", title: "作品 05" },
-      { type: "image", src: "3ds max/朱宏宇6.png", title: "作品 06" }
+      { type: "image", src: "3ds max/朱宏宇6.jpg", title: "作品 06" }
     ]
   },
   {
